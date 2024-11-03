@@ -1,4 +1,84 @@
-nom : CHARPENTIER
-prenom : Nolan
-accroche : Hey there, I'm here to share with you my student journey !
-presentation : 
+accueil:
+    nom: CHARPENTIER
+    prenom: Nolan
+    accroche: Hey there, I'm here to share with you my student journey!
+    presentation: I'm currently in my first year of BTS SIO. I love programming and would like to learn more about other languages. I'd like to become a full-stack developer so I can master lots of different languages and tools!
+
+competences:
+    domaines:
+        - nom: Développement
+          items:
+              - nom: HTML
+                niveau: Avancé
+              - nom: CSS
+                niveau: Avancé
+              - nom: PHP
+                niveau: Connaissances de base
+              - nom: Python
+                niveau: Avancé
+              - nom: SQL
+                niveau: Connaissances de base
+        - nom: Réseau
+          items:
+              - nom: TCP/IP
+                niveau: Intermédiaire
+        - nom: Bureautique
+          items:
+              - nom: Word
+                niveau: Avancé
+              - nom: Excel
+                niveau: Avancé
+        - nom: Langues
+          items:
+              - nom: Anglais
+                niveau: Avancé
+              - nom: Espagnol
+                niveau: Intermédiaire
+        - nom: Certifications
+          items:
+              - nom: MOOC SecNum académie
+                organisation: ANSSI
+                date: 2024
+
+realisations:
+    titre: ###
+    description: ###
+    illustration: # images
+    documents: # procédures, captures, etc.
+
+formations:
+  - nom: Bac Général
+    etablissement: Lycée Alain
+    date_debut: 2021
+    date_fin: 2024
+    lieu: Alençon, France
+    contenu: |
+      Formation généraliste comprenant des matières telles que :
+      - Mathématiques (spécialité)
+      - Numérique et Sciences Informatiques (spécialité)
+      - Français/Philosophie
+      - Histoire-Géographie
+      - Langues vivantes (Anglais, Espagnol)
+
+  - nom: BTS SIO
+    etablissement: Lycée Sainte Ursule
+    date_debut: 2024
+    date_fin: 2026
+    lieu: Caen, France
+    contenu: |
+      - Développement web
+      - Administration des réseaux
+      - Gestion de projet
+      - Système d'information
+    # mettre lien vers un CV
+
+contact:
+    formulaire:
+      - nom_expediteur: ""
+      - adresse_courriel: ""
+      - objet_message: ""
+      - contenu_message: ""
+      - captcha: ""
+    envoi_mail:
+      - adresse_electronique: "nolan.charpentier@sts-sio-caen.info"
+
