@@ -9,13 +9,29 @@ echo '<body>';
 
 require_once("C:/xampp/htdocs/YAML/yaml/yaml.php");
 $data = yaml_parse_file('portfolio.yaml');
+?>
+<header>
+<nav class="navbar">
+  <ol>
+    <li><a href="#accueil">ACCUEIL</a></li>
+    <li><a href="#competences">COMPETENCES</a></li>
+    <li><a href="#realisations">REALISATIONS</a></li>
+    <li><a href="#formations">FORMATIONS</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ol>
+</nav>
+</header>
 
-echo "<h1>Accueil</h1>\n";
+<?php
+echo "<section>";
+echo "<h1 id='accueil'>Accueil</h1>\n";
 echo "<h2>".$data['accueil']['nom']." ".$data['accueil']['prenom']."</h2>\n";
 echo "<p>".$data['accueil']['accroche']."</p>\n";
 echo "<p>".$data['accueil']['presentation']."</p>\n";
+echo "</section>";
 
-echo "<h1>Compétences</h1>\n";
+echo "<section>";
+echo "<h1 id='competences'>Compétences</h1>\n";
 
 foreach ($data['competences']['domaines'] as $domaine) {
     echo "<h3>".$domaine['nom']."</h3>\n";
@@ -73,26 +89,31 @@ foreach ($data['competences']['domaines'] as $domaine) {
     echo "</ul>\n";
 }
 
-echo "<h1>Réalisations</h1>\n";
+echo "</section>";
+
+echo "<section>";
+echo "<h1 id='realisations'>Réalisations</h1>\n";
 echo "<h2>".$data['realisations']['titre']."</h2>\n";
 echo "<p>".$data['realisations']['description']."</p>\n";
 // ensuite mettre *illustration et *documents qui ne sont pas du texte
 // si plusieurs réalisations, mettre une boucle for
+echo "</section>";
 
+echo "<section>";
+echo "<h1 id='formations'>Formations</h1>\n";
 foreach ($data['formations'] as $formation) {
     echo "<h3>".$formation['nom']." - ".$formation['etablissement']."</h3>\n";
     echo "<p>".$formation['date_debut']."-" .$formation['date_fin']."</p>\n";
     echo "<p>".$formation['lieu']."</p>\n";
     echo "<p>".nl2br($formation['contenu'])."</p>\n";
 }
+echo "</section>";
 
-echo "<h1>Contact</h1>\n";
-// peut-être faire un formulaire en html car plus simple, à voir
+echo "<section>";
+echo "<h1 id='contact'>Contact</h1>\n";
 
+echo "</section>";
 
-/* faire des div pour séparer et pouvoir faire avec le css
-   (ajouter du javascript pour rendre plus dynamique)
-*/
 echo '</body>';
 echo '</html>';
 ?>
