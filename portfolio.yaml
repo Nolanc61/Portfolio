@@ -41,8 +41,8 @@ competences:
                 date: 2024
 
 realisations:
-    titre: ###
-    description: ###
+    titre: Calculatrice JavaScript
+    description: Une calculatrice codée uniquement en JavaScript
     illustration: # images
     documents: # procédures, captures, etc.
 
