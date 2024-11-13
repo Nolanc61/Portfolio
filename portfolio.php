@@ -1,12 +1,14 @@
-<?php
-echo '<!DOCTYPE html>';
-echo '<html>';
-echo '<head>';
-echo '<title>Mon Portfolio</title>';
-echo '<link rel="stylesheet" type="text/css" href="assets/css/portfolio.css">';
-echo '</head>';
-echo '<body>';
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>portfolio</title>
+  <link rel="stylesheet" href="./assets/css/portfolio.css">
+ 
+</head>
+<body>
 
+<?php
 require_once("C:/xampp/htdocs/YAML/yaml/yaml.php");
 $data = yaml_parse_file('portfolio.yaml');
 ?>
@@ -113,7 +115,7 @@ echo "<section>";
 echo "<h1 id='contact'>Contact</h1>\n";
 
 echo "</section>";
-
-echo '</body>';
-echo '</html>';
 ?>
+
+</body>
+</html>
