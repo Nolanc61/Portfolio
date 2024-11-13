@@ -14,13 +14,13 @@ $data = yaml_parse_file('portfolio.yaml');
 ?>
 <header>
     <nav class="navbar">
-    <ol>
-        <li><a href="#accueil">ACCUEIL</a></li>
-        <li><a href="#competences">COMPETENCES</a></li>
-        <li><a href="#realisations">REALISATIONS</a></li>
-        <li><a href="#formations">FORMATIONS</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-    </ol>
+        <ol>
+            <li><a href="#accueil">ACCUEIL</a></li>
+            <li><a href="#competences">COMPETENCES</a></li>
+            <li><a href="#realisations">REALISATIONS</a></li>
+            <li><a href="#formations">FORMATIONS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ol>
     </nav>
 </header>
 
@@ -109,16 +109,8 @@ foreach ($data['formations'] as $formation) {
     echo "<p>".$formation['lieu']."</p>\n";
     echo "<p>".nl2br($formation['contenu'])."</p>\n";
 }
-<<<<<<< HEAD
 echo "</section>";
 
-echo "<section>";
-echo "<h1 id='contact'>Contact</h1>\n";
-
-echo "</section>";
-?>
-
-=======
 ?>
 
 </section>
@@ -126,7 +118,6 @@ echo "</section>";
 <section id='contact'>
     <div class="contactez-nous">
         <h1>Contact</h1>
-        <p>Un problème, une question, envie de m'envoyer un message ? N’hésitez pas à utiliser ce formulaire pour prendre contact avec moi !</p>
         <form action="" method="post">
             <div>
                 <label for="nom">Votre nom</label>
@@ -156,6 +147,5 @@ echo "</section>";
     </div>
 </section>
 
->>>>>>> 3b933c525602adfa6fb492bfc3a34ce40a70e988
 </body>
 </html>

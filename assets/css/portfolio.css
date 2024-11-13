@@ -1,21 +1,21 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     list-style-type: none;
 }
+
 
 body {
     background-color: grey;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-shadow: 2px 2px 5px pink;
-    display: flex;
+    /*display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    align-items: center;*/
 }
+
 
 header {
     position: fixed;
@@ -26,12 +26,12 @@ header {
 
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 10px 20px;
-    width: max-content;
+    width: 70%;
     margin: 10px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -39,13 +39,13 @@ header {
 .navbar ol {
     list-style-type: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .navbar ol li a {
     color: white;
     text-decoration: none;
-    font-size: clamp(1em, 1.2vw, 1.2em); /* Responsive font size pour toutes les tailles d'écran*/
+    /*font-size: clamp(1em, 1.2vw, 1.2em);*/ /* Responsive font size pour toutes les tailles d'écran*/
     border-radius: 25px;
     padding: 10px 15px;
     transition: background-color 0.3s, color 0.3s;
@@ -59,19 +59,19 @@ header {
 
 section {
     min-height: 100vh;
-    min-width: 100%;
+    min-width: 100vw;
     padding: 60px 40px;
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
     text-align: center;
     color: white;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
-
+/*
 section:nth-child(odd) {
     background-image: url("../images/fond.jpg");
 }
@@ -79,44 +79,52 @@ section:nth-child(odd) {
 section:nth-child(even) {
     background-image: url("../images/fond2.jpg");
 }
-
+*/
 h1 {
-    font-size: clamp(2em, 4vw, 4em);
+    /*font-size: clamp(60pt, 4vw, 150pt);*/
+    font-size: 30pt;
     margin-bottom: 20px;
 }
 
 h2 {
-    font-size: clamp(1.5em, 3vw, 3em);
+    /*font-size: clamp(40pt, 3vw, 100pt);*/
+    font-size: 25pt;
     margin-bottom: 20px;
 }
 
 h3 {
-    font-size: clamp(1.2em, 2.5vw, 2.5em);
+    /*font-size: max(30pt, 3vw);*/
+    font-size: 20pt;
     margin-bottom: 20px;
 }
 
 p {
-    font-size: clamp(1em, 2vw, 1.5em);
+    /*font-size: clamp(1em, 2vw, 1.5em);*/
+    font-size: 15pt;
     margin-bottom: 20px;
     max-width: 800px;
+    margin:auto;
     line-height: 1.5;
 }
 
 /* Requête media pour les très petits écrans */
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
     section {
         padding: 40px 20px;
     }
-}
+}*/
 
+/*
 .contactez-nous {
     color: rgb(0, 0, 0);
+    text-shadow: none;
     text-decoration: none;
+    margin: auto;
     width: 700px;
     border: 1px solid;
     border-radius: 8px;
-    padding: 0 50px 0 50px;
-    background: grey;
+    padding: 50px 50px 0 50px;
+    background: #8d7491;
   }
   
 .contactez-nous h1 {
@@ -198,3 +206,4 @@ form button {
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
     color: #303030;
 }
+    */
