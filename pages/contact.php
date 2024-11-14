@@ -17,12 +17,13 @@
                     <option value="" disabled selected hidden>Choisissez le sujet de votre message</option>
                     <option value="probleme-portfolio">Problème avec mon portfolio</option>
                     <option value="question">Question à propos de moi</option>
+                    <option value="collaboration">Demande de collaboration</option>
                     <option value="autre">Autre...</option>
                 </select>
             </div>
             <div>
                 <label for="message">Votre message</label>
-                <textarea id="message" name="message" placeholder="Bonjour, je vous contacte car...." required></textarea>
+                <textarea id="message" name="message" placeholder="Bonjour, je vous contacte car..." required></textarea>
             </div>
             <div>
                 <button type="submit">Envoyer mon message</button>
