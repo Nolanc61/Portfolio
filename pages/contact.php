@@ -1,11 +1,10 @@
 <section id='contact'>
     <div class="contactez-nous">
-        <h1>Contact</h1>
-        <p>Un problème, une question, envie de m'envoyer un message ? N’hésitez pas à utiliser ce formulaire pour prendre contact avec moi !</p>
+        <h1>Un problème, une question, envie de m'envoyer un message ? N’hésitez pas à utiliser ce formulaire pour prendre contact avec moi !</h1>
         <form action="" method="post">
             <div>
                 <label for="nom">Votre nom</label>
-                <input type="text" id="nom" name="nom" placeholder="Martin" required>
+                <input type="text" id="nom" name="nom" placeholder="John Doe" required>
             </div>
             <div>
                 <label for="email">Votre e-mail</label>

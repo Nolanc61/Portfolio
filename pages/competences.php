@@ -1,5 +1,4 @@
 <section id='competences'>
-    <h1>Compétences</h1>
     <?php foreach ($data['competences']['domaines'] as $domaine): ?>
         <h3><?php echo $domaine['nom']; ?></h3>
         <ul>

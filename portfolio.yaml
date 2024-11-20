@@ -1,3 +1,10 @@
+menu:
+    accueil: ACCUEIL
+    competences: COMPETENCES    
+    realisations: REALISATIONS
+    formations: FORMATIONS
+    contact: CONTACT
+
 accueil:
     nom: CHARPENTIER
     prenom: Nolan
