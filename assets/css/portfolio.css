@@ -54,122 +54,38 @@ body {
     color: #333;
     background-color: lightgrey;
     border-radius: 20px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 /* Sections (100vh pour chaque page) */
 section {
     min-height: 100vh;  /* 100% de la hauteur de la fenêtre */
     padding: 50px 20px;
-    margin: 50px 0;
-    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
 /* Accueil */
 #accueil {
-    background-color: #fff;
+    background: linear-gradient(0.125turn, rgb(40, 40, 40), grey, lightgrey, grey, rgb(40, 40, 40));
     text-align: center;
 }
 
-#accueil h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 10px;
+#competences{
+    background: linear-gradient(0.375turn, rgb(40, 40, 40), grey, lightgrey, grey, rgb(40, 40, 40));
 }
 
-#accueil h2 {
-    font-size: 2rem;
-    color: #444;
-    margin-bottom: 20px;
+#realisations{
+    background: linear-gradient(0.125turn, rgb(40, 40, 40), grey, lightgrey, grey, rgb(40, 40, 40));
 }
 
-#accueil p {
-    font-size: 1.1rem;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Compétences */
-#competences h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#competences h3 {
-    margin-top: 30px;
-    font-size: 1.8rem;
-    color: #444;
-}
-
-#competences ul {
-    list-style: none;
-    padding: 0;
-}
-
-#competences li {
-    margin: 10px 0;
-    font-size: 1.1rem;
-}
-
-#competences li span {
-    display: inline-block;
-    margin-left: 10px;
-}
-
-#competences li .stars {
-    color: #ffcc00;
-}
-
-/* Réalisations */
-#realisations {
-    background-color: #fff;
-}
-
-#realisations h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#realisations h2 {
-    font-size: 1.8rem;
-    color: #444;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-#realisations p {
-    font-size: 1.1rem;
-    color: #555;
-    text-align: center;
-}
-
-/* Formations */
-#formations {
-    background-color: #fff;
-}
-
-#formations h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#formations h3 {
-    margin-top: 20px;
-    font-size: 1.6rem;
-    color: #333;
-}
-
-#formations p {
-    font-size: 1rem;
-    color: #555;
-    text-align: center;
+#formations{
+    background: linear-gradient(0.375turn, rgb(40, 40, 40), grey, lightgrey, grey, rgb(40, 40, 40));
 }
 
 /* Contact */
 #contact {
-    background-color: #fff;
+    background: linear-gradient(0.125turn, rgb(40, 40, 40), grey, lightgrey, grey, rgb(40, 40, 40));
 }
 
 #contact h1 {

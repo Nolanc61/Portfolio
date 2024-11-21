@@ -1,3 +1,13 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Vérification des données du formulaire
+    $nom = htmlspecialchars($_POST['nom']);
+    $email = htmlspecialchars($_POST['email']);
+    $sujet = htmlspecialchars($_POST['sujet']);
+    $message = htmlspecialchars($_POST['message']);
+}
+?>
+
 <section id='contact'>
     <div class="contactez-nous">
         <h1>Un problème, une question, envie de m'envoyer un message ? N’hésitez pas à utiliser ce formulaire pour prendre contact avec moi !</h1>
@@ -30,3 +40,4 @@
         </form>
     </div>
 </section>
+
