@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 
 /* Style global */
@@ -17,7 +18,6 @@ body {
 .navbar {
     position: fixed;
     top: 0;
-    width: 60%;
     text-align: center;
     margin-left: 20%;
     margin-right: 20%;
@@ -47,6 +47,9 @@ body {
     padding: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
+    border-radius: 20px;
+    background-color: transparent;
+    transition: background-color 0.6s ease-in-out;
 }
 
 
@@ -54,7 +57,7 @@ body {
     color: #333;
     background-color: lightgrey;
     border-radius: 20px;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.6s ease-in-out;
 }
 
 /* Sections (100vh pour chaque page) */
@@ -63,12 +66,32 @@ section {
     padding: 50px 20px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 200px;
 }
 
 /* Accueil */
 #accueil {
     background: linear-gradient(0.125turn, rgb(40, 40, 40), grey, lightgrey, grey, rgb(40, 40, 40));
     text-align: center;
+}
+
+#accueil h2 {
+    font-size: 50px;
+}
+
+#accueil p {
+    font-size: 30px;
+    text-align: justify;
+}
+
+#gauche {
+    width: 65vw;
+    display: inline-block;
+    padding-right: 20px;
+}
+
+#droite {
+    width: 25vw;
 }
 
 #competences{
