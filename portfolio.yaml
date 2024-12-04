@@ -8,8 +8,8 @@ menu:
 accueil:
     nom: CHARPENTIER
     prenom: Nolan
-    accroche: Hey there, I'm here to share with you my student journey!
-    presentation: I'm currently in my first year of BTS SIO. I love programming and would like to learn more about other languages. I'd like to become a full-stack developer so I can master lots of different languages and tools!
+    accroche: Bienvenue, je suis ici pour partager avec vous mon parcours d'étudiant !
+    presentation: Je suis actuellement en première année de BTS SIO. J'adore la programmation et j'aimerais en apprendre plus sur d'autres langages. J'aimerais devenir développeur full-stack afin de maîtriser de nombreux langages et outils différents !
 
 competences:
     domaines:
@@ -20,11 +20,11 @@ competences:
               - nom: CSS
                 niveau: Avancé
               - nom: PHP
-                niveau: Connaissances de base
+                niveau: Intermédiaire
               - nom: Python
                 niveau: Avancé
               - nom: SQL
-                niveau: Connaissances de base
+                niveau: Intermédiaire
         - nom: Réseau
           items:
               - nom: TCP/IP
@@ -37,6 +37,8 @@ competences:
                 niveau: Avancé
         - nom: Langues
           items:
+              - nom: Français
+                niveau: Expert
               - nom: Anglais
                 niveau: Avancé
               - nom: Espagnol
