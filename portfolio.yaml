@@ -29,6 +29,8 @@ competences:
           items:
               - nom: TCP/IP
                 niveau: Intermédiaire
+              - nom: Analyse de trames
+                niveau: Intermédiaire
         - nom: Bureautique
           items:
               - nom: Word
@@ -68,6 +70,7 @@ formations:
       - Français/Philosophie
       - Histoire-Géographie
       - Langues vivantes (Anglais, Espagnol)
+    image: LycéeAlain
 
   - nom: BTS SIO
     etablissement: Lycée Sainte Ursule
@@ -79,6 +82,7 @@ formations:
       - Administration des réseaux
       - Gestion de projet
       - Système d'information
+    image: LycéeSainteUrsule
     # mettre lien vers un CV
 
 contact:

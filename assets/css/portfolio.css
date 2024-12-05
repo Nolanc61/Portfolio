@@ -1,12 +1,10 @@
-/* RESET de styles de base */
-* {
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
 }
 
-/* Style global */
 body {
     font-family: 'Arial', sans-serif;
     background-color: white;
@@ -20,7 +18,6 @@ header {
     justify-content: center;
 }
 
-/* Navbar */
 .navbar {
     position: fixed;
     display: flex;
@@ -65,7 +62,6 @@ header {
     transition: background-color 0.6s ease-in-out;
 }
 
-/* Sections (100vh pour chaque page) */
 section {
     min-height: 100vh;  /* 100% de la hauteur de la fenêtre */
     padding: 50px 20px;
@@ -74,10 +70,8 @@ section {
     padding-top: 200px;
 }
 
-/* Accueil */
 #accueil {
-    background: rgb(212,211,220);
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgba(56,68,80,1) 87%);
+    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
     text-align: center;
 }
 
@@ -105,60 +99,147 @@ section {
     width: 15vw;
 }
 
+.competences {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de revenir à la ligne */
+    justify-content: center; /* Centre tous les éléments par défaut */
+    gap: 2%; /* Espacement entre les éléments */
+}
+
 #competences_bloc {
-    background-color: black;
-    width: 30vw;
+    flex: 1 1 calc(33.33% - 2%); /* Largeur d'un tiers moins l'espacement */
+    max-width: calc(33.33% - 2%); /* Empêche les blocs de dépasser un tiers */
+    background-color: rgb(30, 30, 30);
     height: 15vw;
     padding: 2.5vw;
     border-radius: 15px;
-    margin-left: 2vw;
+    margin-bottom: 20px; /* Espacement vertical */
 }
 
-.competences {
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    grid-template-rows: repeat(2, 250px);
-    gap: 16%;
+/* Correction spécifique pour les 2 derniers éléments */
+.competences > :nth-child(4),
+.competences > :nth-child(5) {
+    flex: 1 1 calc(50% - 2%); /* Deux blocs prennent chacun la moitié de la ligne */
+    max-width: calc(50% - 2%);
 }
 
 #competences{
     color: #D4D3DC;
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgba(56,68,80,1) 87%);
+    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
 }
 
 #competences h3 {
     font-size: 40px;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 0.1vw;
 }
 
 #competences li {
     font-size: 20px;
     text-align: justify;
+    padding: 0.1vw;
 }
 
-#realisations{
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgba(56,68,80,1) 87%);
+#realisations, #formations {
+    color: #D4D3DC;
+    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
 }
 
-#realisations h2 {
+#realisations h2, #formations h3 {
     font-size: 40px;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 1vw;
 }
 
-#realisations p {
+#realisations p, #formations p {
     font-size: 20px;
     text-align: justify;
+    padding: 0.5vw 0;
 }
 
-#formations{
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgba(56,68,80,1) 87%);
+/* Section réalisations */
+#realisations .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+#realisations .content .illustration {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+}
+
+#realisations .content .documents {
+    width: 100%;
+    max-width: 600px;
+    background-color: rgb(30, 30, 30);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* Section formations */
+#formations .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+#formations .content .formation {
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+#formations .content .formation h4 {
+    font-size: 30px;
+    text-align: center;
+}
+
+#formations .content .formation p {
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.formation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+    width: 45%; /* Chaque bloc occupe 45% de la largeur */
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.formation .image img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: contain; /* Ajuste l'image pour qu'elle ne soit pas rognée */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.formation .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* Contact */
 #contact {
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgba(56,68,80,1) 87%);
+    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
     display: flex;
     justify-content: center;
     height: 40vh;
@@ -243,11 +324,4 @@ label::after {
     font-weight: bold;
 }
 
-.error-message {
-    color: red;
-    font-size: 12px;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    display: none;
-}
 
