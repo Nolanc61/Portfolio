@@ -52,10 +52,15 @@ competences:
                 date: 2024
 
 realisations:
-    titre: Calculatrice JavaScript
-    description: Une calculatrice codée uniquement en JavaScript
-    illustration: # images
-    documents: # procédures, captures, etc.
+    - titre: Calculatrice JavaScript
+      description: Une calculatrice codée en JavaScript et HTML
+      illustration: assets/images/calculatrice.png
+    - titre: Blog Web Arena
+      description: Une page web d'un blog codé en HTML
+      illustration: assets/images/blog.png    
+    - titre: Formulaire de contact
+      description: Une formulaire de contact codé en HTML et PHP
+      illustration: assets/images/contact.png
 
 formations:
   - nom: Bac Général

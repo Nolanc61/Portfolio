@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <div class="contact-left">
             <h1>Me <br>contacter</h1>
-            <p><strong>Je serai ravis de vous lire...</strong></p>
+            <p><strong>Je serai ravi de vous lire...</strong></p>
         </div>
         <div class="contact-right">
             <form id="contactForm" action="" method="post">

@@ -1,10 +1,12 @@
-<section id='realisations'>
-    <h2><?php echo $data['realisations']['titre']; ?></h2>
-    <p><?php echo $data['realisations']['description']; ?></p>
+<section id="realisations">
+    <h2>RÉALISATIONS</h2>
     <div class="content">
-        <img class="illustration" src="<?php echo $data['realisations']['illustration']; ?>" alt="Illustration de la réalisation">
-        <div class="documents">
-            <p><?php echo nl2br($data['realisations']['documents']); ?></p>
-        </div>
+        <?php foreach ($data['realisations'] as $realisation): ?>
+            <div class="realisation">
+                <img src="<?php echo $realisation['illustration']; ?>" alt="<?php echo htmlspecialchars($realisation['titre']); ?>" class="illustration">
+                <h3><?php echo htmlspecialchars($realisation['titre']); ?></h3>
+                <p><?php echo htmlspecialchars($realisation['description']); ?></p>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>

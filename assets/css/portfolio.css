@@ -11,6 +11,9 @@ body {
     color: #333;
     overflow-x: hidden;
 }
+h2, h3 {
+    margin: 1%;
+}
 
 header {
     display: flex;
@@ -102,21 +105,20 @@ section {
 .competences {
     display: flex;
     flex-wrap: wrap; /* Permet aux éléments de revenir à la ligne */
-    justify-content: center; /* Centre tous les éléments par défaut */
-    gap: 2%; /* Espacement entre les éléments */
+    justify-content: center;
+    gap: 2%;
 }
 
 #competences_bloc {
     flex: 1 1 calc(33.33% - 2%); /* Largeur d'un tiers moins l'espacement */
-    max-width: calc(33.33% - 2%); /* Empêche les blocs de dépasser un tiers */
+    max-width: calc(33.33% - 2%);
     background-color: rgb(30, 30, 30);
     height: 15vw;
     padding: 2.5vw;
     border-radius: 15px;
-    margin-bottom: 20px; /* Espacement vertical */
+    margin-bottom: 20px; 
 }
 
-/* Correction spécifique pour les 2 derniers éléments */
 .competences > :nth-child(4),
 .competences > :nth-child(5) {
     flex: 1 1 calc(50% - 2%); /* Deux blocs prennent chacun la moitié de la ligne */
@@ -140,10 +142,44 @@ section {
     padding: 0.1vw;
 }
 
+/*Réalisations*/
 #realisations, #formations {
     color: #D4D3DC;
     background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
 }
+#realisations .content {
+    display: flex;
+    flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+    gap: 2%; /* Espacement entre les blocs */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.realisation {
+    display: flex;
+    flex-direction: column; /* Image au-dessus, texte en dessous */
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+    padding: 20px;
+    border-radius: 15px;
+    width: 30%;
+    max-width: 400px;
+    text-align: center;
+    color: #D4D3DC;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.realisation .illustration {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.realisation .description {
+    font-size: 16px;
+    text-align: justify;
+}
+
 
 #realisations h2, #formations h3 {
     font-size: 40px;
@@ -157,31 +193,7 @@ section {
     padding: 0.5vw 0;
 }
 
-/* Section réalisations */
-#realisations .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    text-align: center;
-}
-
-#realisations .content .illustration {
-    width: 80%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 10px;
-}
-
-#realisations .content .documents {
-    width: 100%;
-    max-width: 600px;
-    background-color: rgb(30, 30, 30);
-    padding: 20px;
-    border-radius: 15px;
-}
-
-/* Section formations */
+/*Formations*/
 #formations .content {
     display: flex;
     flex-wrap: wrap;
@@ -242,13 +254,16 @@ section {
     background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
     display: flex;
     justify-content: center;
-    height: 40vh;
+    height: 20vh;
+    padding: 20pcx;
 }
 
 .container {
     display: flex;
-    width: 40%; /* Ajuste la largeur totale */
+    width: 50%; /* Ajuste la largeur totale */
+    height: 80%;
     max-width: 900px;
+    max-height: 700px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -256,7 +271,7 @@ section {
 
 .contact-left {
     background-color: #E1A624;
-    padding: 30px;
+    padding: 20px;
     flex: 1; /* Pour équilibrer les sections */
     display: flex;
     flex-direction: column;
@@ -272,11 +287,6 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
 }
 
 label {

@@ -1,4 +1,5 @@
 <section id="formations">
+    <h3>FORMATIONS</h3>
     <div class="content">
         <?php foreach ($data['formations'] as $formation): ?>
             <div class="formation">
