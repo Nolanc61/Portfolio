@@ -9,7 +9,7 @@
 
 <?php
 require_once("C:/xampp/htdocs/YAML/yaml/yaml.php");
-$data = yaml_parse_file('portfolio.yaml');
+$data = yaml_parse_file('accueil.yaml');
 ?>
 
 <header>

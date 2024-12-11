@@ -1,0 +1,27 @@
+formations:
+  - nom: Bac Général
+    etablissement: Lycée Alain
+    date_debut: 2021
+    date_fin: 2024
+    lieu: Alençon, France
+    contenu: |
+      Formation généraliste comprenant des matières telles que :
+      - Mathématiques (spécialité)
+      - Numérique et Sciences Informatiques (spécialité)
+      - Français/Philosophie
+      - Histoire-Géographie
+      - Langues vivantes (Anglais, Espagnol)
+    image: LycéeAlain
+
+  - nom: BTS SIO
+    etablissement: Lycée Sainte Ursule
+    date_debut: 2024
+    date_fin: 2026
+    lieu: Caen, France
+    contenu: |
+      - Développement web
+      - Administration des réseaux
+      - Gestion de projet
+      - Système d'information
+    image: LycéeSainteUrsule
+    # mettre lien vers un CV

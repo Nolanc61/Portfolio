@@ -1,3 +1,6 @@
+<?php
+    $data = yaml_parse_file('realisations.yaml');
+?>
 <section id="realisations">
     <h2>RÉALISATIONS</h2>
     <div class="content">

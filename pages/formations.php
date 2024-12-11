@@ -1,5 +1,8 @@
+<?php
+    $data = yaml_parse_file('formations.yaml');
+?>
 <section id="formations">
-    <h3>FORMATIONS</h3>
+    <h2>FORMATIONS</h2>
     <div class="content">
         <?php foreach ($data['formations'] as $formation): ?>
             <div class="formation">

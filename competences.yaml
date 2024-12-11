@@ -1,0 +1,39 @@
+competences:
+    domaines:
+        - nom: Développement
+          items:
+              - nom: HTML
+                niveau: Avancé
+              - nom: CSS
+                niveau: Avancé
+              - nom: PHP
+                niveau: Intermédiaire
+              - nom: Python
+                niveau: Avancé
+              - nom: SQL
+                niveau: Intermédiaire
+        - nom: Réseau
+          items:
+              - nom: TCP/IP
+                niveau: Intermédiaire
+              - nom: Analyse de trames
+                niveau: Intermédiaire
+        - nom: Bureautique
+          items:
+              - nom: Word
+                niveau: Avancé
+              - nom: Excel
+                niveau: Avancé
+        - nom: Langues
+          items:
+              - nom: Français
+                niveau: Expert
+              - nom: Anglais
+                niveau: Avancé
+              - nom: Espagnol
+                niveau: Intermédiaire
+        - nom: Certifications
+          items:
+              - nom: MOOC SecNum académie
+                organisation: ANSSI
+                date: 2024

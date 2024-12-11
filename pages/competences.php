@@ -1,5 +1,8 @@
+<?php
+$data = yaml_parse_file('competences.yaml');
+?>
 <section id='competences'>
-    <h3>COMPETENCES</h3>
+    <h2>COMPETENCES</h2>
     <div class="competences">
         <?php foreach ($data['competences']['domaines'] as $domaine): ?>
             <div id="competences_bloc">

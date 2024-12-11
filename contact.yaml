@@ -1,0 +1,9 @@
+contact:
+    formulaire:
+      - nom_expediteur: ""
+      - adresse_courriel: ""
+      - objet_message: ""
+      - contenu_message: ""
+      - captcha: ""
+    envoi_mail:
+      - adresse_electronique: "nolan.charpentier@sts-sio-caen.info"

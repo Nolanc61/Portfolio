@@ -1,12 +1,13 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Vérification des données du formulaire
-    $name = htmlspecialchars($_POST['name']);
-    $lastname = htmlspecialchars($_POST['lastname']);
-    $mail = htmlspecialchars($_POST['mail']);
-    $objet = htmlspecialchars($_POST['objet']);
-    $msg = htmlspecialchars($_POST['msg']);
-}
+    $data = yaml_parse_file('contact.yaml');
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Vérification des données du formulaire
+        $name = htmlspecialchars($_POST['name']);
+        $lastname = htmlspecialchars($_POST['lastname']);
+        $mail = htmlspecialchars($_POST['mail']);
+        $objet = htmlspecialchars($_POST['objet']);
+        $msg = htmlspecialchars($_POST['msg']);
+    }
 ?>
 
 <section id='contact'>

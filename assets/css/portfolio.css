@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: monospace;
     background-color: white;
     color: #333;
     overflow-x: hidden;
@@ -27,8 +27,8 @@ header {
     align-items: center;
     top: 0;
     margin: auto;
-    margin-top: 25px;
-    padding: 10px 10px 10px 10px;
+    margin-top: 2%;
+    padding: 8px 8px 8px 8px;
     background-color: #333;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
@@ -39,7 +39,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
-    padding: 10px 0;
+    padding: 1.5% 0;
     background-color: #333;
 }
 
@@ -48,8 +48,7 @@ header {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 20px;
     padding: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -67,21 +66,19 @@ header {
 
 section {
     min-height: 100vh;  /* 100% de la hauteur de la fenêtre */
-    padding: 50px 20px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 200px;
-}
-
-#accueil {
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
-    text-align: center;
+    padding: 4% 2%;
+    padding-top: 12vh;
 }
 
 #intro {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#accueil {
+    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
+    text-align: center;
 }
 
 #accueil h2 {
@@ -102,87 +99,87 @@ section {
     width: 15vw;
 }
 
+/* Compétences */
 .competences {
     display: flex;
     flex-wrap: wrap; /* Permet aux éléments de revenir à la ligne */
     justify-content: center;
     gap: 2%;
+    
 }
 
 #competences_bloc {
     flex: 1 1 calc(33.33% - 2%); /* Largeur d'un tiers moins l'espacement */
     max-width: calc(33.33% - 2%);
     background-color: rgb(30, 30, 30);
-    height: 15vw;
     padding: 2.5vw;
     border-radius: 15px;
     margin-bottom: 20px; 
+    box-shadow: 0 2vh 1vh rgba(0, 0, 0, 0.5);
 }
 
 .competences > :nth-child(4),
 .competences > :nth-child(5) {
-    flex: 1 1 calc(50% - 2%); /* Deux blocs prennent chacun la moitié de la ligne */
-    max-width: calc(50% - 2%);
+    flex: 1 1 calc(50% - 2vw); /* Deux blocs prennent chacun la moitié de la ligne */
+    max-width: calc(50% - 2vw);
 }
 
-#competences{
-    color: #D4D3DC;
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
-}
 
 #competences h3 {
-    font-size: 40px;
+    font-size: 2.5vw;
     text-align: center;
     padding-bottom: 0.1vw;
 }
 
 #competences li {
-    font-size: 20px;
+    font-size: 1.5vw;
     text-align: justify;
     padding: 0.1vw;
 }
 
 /*Réalisations*/
-#realisations, #formations {
-    color: #D4D3DC;
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
-}
-#realisations .content {
-    display: flex;
-    flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
-    gap: 2%; /* Espacement entre les blocs */
-    justify-content: center;
-    margin-top: 20px;
-}
-
 .realisation {
     display: flex;
     flex-direction: column; /* Image au-dessus, texte en dessous */
     align-items: center;
     background-color: rgb(30, 30, 30);
-    padding: 20px;
+    padding: 2vw;
     border-radius: 15px;
     width: 30%;
     max-width: 400px;
     text-align: center;
     color: #D4D3DC;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2vh 1vh rgba(0, 0, 0, 0.5);
 }
+
+#realisations, #formations, #competences {
+    color: #D4D3DC;
+    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
+}
+
+#realisations .content {
+    display: flex;
+    flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+    gap: 2%; /* Espacement entre les blocs */
+    justify-content: center;
+    margin-top: 2vh;
+}
+
 
 .realisation .illustration {
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    border-radius: 1vh;
+    margin-bottom: 1.5vh;
 }
 
 .realisation .description {
-    font-size: 16px;
+    font-size: 1.6vw;
     text-align: justify;
 }
 
 
-#realisations h2, #formations h3 {
-    font-size: 40px;
+#realisations h2, #formations h2, #competences h2 {
+    font-size: 3vw;
     text-align: center;
     padding-bottom: 1vw;
 }
@@ -194,6 +191,20 @@ section {
 }
 
 /*Formations*/
+.formation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+    width: 45%; /* Chaque bloc occupe 45% de la largeur */
+    max-width: 500px;
+    padding: 2vw;
+    border-radius: 15px;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 2vh 1vh rgba(0, 0, 0, 0.5);
+}
+
 #formations .content {
     display: flex;
     flex-wrap: wrap;
@@ -205,37 +216,25 @@ section {
     background-color: rgb(255, 255, 255);
     width: 80%;
     max-width: 800px;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 2vw;
+    border-radius: 2vh;
 }
 
 #formations .content .formation h4 {
-    font-size: 30px;
+    font-size: 2vw;
     text-align: center;
 }
 
 #formations .content .formation p {
-    font-size: 18px;
+    font-size: 1.5vw;
     text-align: justify;
     margin-bottom: 10px;
 }
 
-.formation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(30, 30, 30);
-    width: 45%; /* Chaque bloc occupe 45% de la largeur */
-    max-width: 500px;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    color: #333;
-}
-
 .formation .image img {
     width: 100%;
-    max-height: 150px;
+    height: 100%;
+    max-height: 15vh;
     object-fit: contain; /* Ajuste l'image pour qu'elle ne soit pas rognée */
     border-radius: 10px;
     margin-bottom: 10px;
@@ -255,23 +254,23 @@ section {
     display: flex;
     justify-content: center;
     height: 20vh;
-    padding: 20pcx;
+    padding: 6vw;
 }
 
 .container {
     display: flex;
-    width: 50%; /* Ajuste la largeur totale */
+    width: 60%; /* Ajuste la largeur totale */
     height: 80%;
-    max-width: 900px;
+    max-width: 800px;
     max-height: 700px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.4vh 0.6vh rgba(0, 0, 0, 0.1);
 }
 
 .contact-left {
     background-color: #E1A624;
-    padding: 20px;
+    padding: 1vh;
     flex: 1; /* Pour équilibrer les sections */
     display: flex;
     flex-direction: column;
@@ -331,7 +330,45 @@ input[type="submit"]:hover {
 label::after {
     content: " *";
     color: red;
-    font-weight: bold;
 }
 
 
+/* Media query pour la section compétences */
+@media (max-width: 768px) {
+    .competences {
+        flex-direction: column;
+        gap: 20px; /* Espacement vertical entre les blocs */
+    }
+
+    #competences_bloc {
+        width: 90%; /* Prend presque toute la largeur de l'écran */
+        max-width: none;
+        margin: 0 auto; /* Centrage horizontal */
+    }
+
+    #competences h3 {
+        font-size: 1.8rem;
+    }
+
+    #competences li {
+        font-size: 1.2rem;
+    }
+}
+
+/* Media query pour la section réalisations */
+@media (max-width: 768px) {
+    #realisations .content {
+        flex-direction: column;
+        gap: 20px; /* Espacement vertical entre les blocs */
+    }
+
+    .realisation {
+        width: 90%; /* Prend presque toute la largeur de l'écran */
+        max-width: none;
+        margin: 0 auto; /* Centrage horizontal */
+    }
+
+    .realisation .description {
+        font-size: 1rem;
+    }
+}

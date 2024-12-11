@@ -1,0 +1,13 @@
+menu:
+    accueil: ACCUEIL
+    competences: COMPETENCES    
+    realisations: REALISATIONS
+    formations: FORMATIONS
+    contact: CONTACT
+
+accueil:
+    nom: CHARPENTIER
+    prenom: Nolan
+    accroche: Bienvenue, je suis ici pour partager avec vous mon parcours d'étudiant !
+    presentation: Je suis actuellement en première année de BTS SIO. J'adore la programmation et j'aimerais en apprendre plus sur d'autres langages. J'aimerais devenir développeur full-stack afin de maîtriser de nombreux langages et outils différents !
+

@@ -1,3 +1,6 @@
+<?php
+    $data = yaml_parse_file('accueil.yaml');
+?>
 <section id='accueil'>
     <h2><?php echo $data['accueil']['nom'] . " " . $data['accueil']['prenom']; ?><br><br></h2>
     <div id="intro">
