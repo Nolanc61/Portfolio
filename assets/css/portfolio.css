@@ -145,7 +145,7 @@ section {
     background-color: rgb(30, 30, 30);
     padding: 2vw;
     border-radius: 15px;
-    width: 30%;
+    width: 20%;
     max-width: 400px;
     text-align: center;
     color: #D4D3DC;
@@ -188,6 +188,22 @@ section {
     font-size: 20px;
     text-align: justify;
     padding: 0.5vw 0;
+}
+
+.download-btn {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    margin: 30px 30px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.download-btn:hover {
+    background-color: #0056b3;
 }
 
 /*Formations*/
@@ -356,7 +372,7 @@ label::after {
 }
 
 /* Media query pour la section réalisations */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     #realisations .content {
         flex-direction: column;
         gap: 20px; /* Espacement vertical entre les blocs */
@@ -366,6 +382,10 @@ label::after {
         width: 90%; /* Prend presque toute la largeur de l'écran */
         max-width: none;
         margin: 0 auto; /* Centrage horizontal */
+    }
+
+    #realisations h3 {
+        font-size: 1.8rem;
     }
 
     .realisation .description {

@@ -17,7 +17,7 @@
             <p><strong>Je serai ravi de vous lire...</strong></p>
         </div>
         <div class="contact-right">
-            <form id="contactForm" action="" method="post">
+            <form id="contactForm" action="" method="POST">
                 <label for="name">Prénom&nbsp;:</label>
                 <input type="text" id="name" name="name" placeholder="Entrez votre prénom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" title="Le prénom ne doit contenir que des lettres, espaces, apostrophes ou tirets." />
                 

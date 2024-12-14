@@ -8,3 +8,6 @@ realisations:
     - titre: Formulaire de contact
       description: Une formulaire de contact codé en HTML et PHP
       illustration: assets/images/contact.png
+    - titre: Création de compte
+      description: Une page de création de compte codé en HTML et JS
+      illustration: assets/images/signin.png
