@@ -13,14 +13,14 @@ require_once("vendor/autoload.php");
 use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Yaml\Exception\ParseException;
 
-try {
-    $accueilData = Yaml::parseFile('yaml/accueil.yaml');
-    $competencesData = Yaml::parseFile('yaml/competences.yaml');
-    $realisationsData = Yaml::parseFile('yaml/realisations.yaml');
-    $formationsData = Yaml::parseFile('yaml/formations.yaml');
-    $contactData = Yaml::parseFile('contact.yaml');
-} catch (Exception $e) {
-    die("Erreur : Impossible de lire un fichier YAML. " . $e->getMessage());
+if (!function_exists('yaml_parse_file')) {
+    function yaml_parse_file($file){
+        try {
+            return Yaml::parseFile($file);
+        } catch (ParseException $exception) {
+            printf('Unable to parse the YAML string: <b>%s</b>', $exception->getMessage());
+        }
+    }
 }
 ?>
 

@@ -1,25 +1,21 @@
+<?php
+    $data = yaml_parse_file('yaml/formations.yaml');
+?>
 <section id="formations">
     <h2>FORMATIONS</h2>
     <div class="content">
-        <?php if (isset($formationsData['formations']) && is_array($formationsData['formations'])): ?>
-            <?php foreach ($formationsData['formations'] as $formation): ?>
-                <div class="formation">
-                    <div class="image">
-                        <img src="assets/images/<?php echo htmlspecialchars($formation['image'] ?? "default") . '.png'; ?>" 
-                             alt="<?php echo htmlspecialchars($formation['etablissement'] ?? "Établissement introuvable"); ?>">
-                    </div>
-                    <div class="text">
-                        <h4>
-                            <?php echo htmlspecialchars(($formation['nom'] ?? "Nom introuvable") . " - " . ($formation['etablissement'] ?? "")); ?>
-                        </h4>
-                        <p><?php echo htmlspecialchars(($formation['date_debut'] ?? "Début inconnu") . " - " . ($formation['date_fin'] ?? "Fin inconnue")); ?></p>
-                        <p><?php echo htmlspecialchars($formation['lieu'] ?? "Lieu inconnu"); ?></p>
-                        <p><?php echo nl2br(htmlspecialchars($formation['contenu'] ?? "Contenu non disponible")); ?></p>
-                    </div>
+        <?php foreach ($data['formations'] as $formation): ?>
+            <div class="formation">
+                <div class="image">
+                    <img src="assets/images/<?php echo htmlspecialchars($formation['image']) . '.png'; ?>" alt="<?php echo htmlspecialchars($formation['etablissement']); ?>">
                 </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p>Aucune formation trouvée.</p>
-        <?php endif; ?>
+                <div class="text">
+                    <h4><?php echo $formation['nom'] . " - " . $formation['etablissement']; ?></h4>
+                    <p><?php echo $formation['date_debut'] . " - " . $formation['date_fin']; ?></p>
+                    <p><?php echo $formation['lieu']; ?></p>
+                    <p><?php echo nl2br($formation['contenu']); ?></p>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>
