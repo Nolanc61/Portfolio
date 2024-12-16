@@ -1,5 +1,4 @@
 <?php
-    $data = yaml_parse_file('contact.yaml');
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vérification des données du formulaire
         $name = htmlspecialchars($_POST['name']);

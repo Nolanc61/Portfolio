@@ -1,16 +1,19 @@
-<?php
-    $data = yaml_parse_file('realisations.yaml');
-?>
 <section id="realisations">
     <h2>RÉALISATIONS</h2>
     <div class="content">
-        <?php foreach ($data['realisations'] as $realisation): ?>
-            <div class="realisation">
-            <img src="<?php echo $realisation['illustration']; ?>" alt="<?php echo htmlspecialchars($realisation['titre']); ?>" class="illustration">
-                <h3><?php echo htmlspecialchars($realisation['titre']); ?></h3>
-                <p><?php echo htmlspecialchars($realisation['description']); ?></p>
-            </div>
-        <?php endforeach; ?>
-        <a href="../assets/pdf/Nolan CV.pdf" class="download-btn" target="_blank">Télécharger mon CV</a>
+        <?php if (isset($realisationsData['realisations']) && is_array($realisationsData['realisations'])): ?>
+            <?php foreach ($realisationsData['realisations'] as $realisation): ?>
+                <div class="realisation">
+                    <img src="<?php echo htmlspecialchars($realisation['illustration'] ?? "assets/images/default.png"); ?>" 
+                         alt="<?php echo htmlspecialchars($realisation['titre'] ?? "Titre inconnu"); ?>" 
+                         class="illustration">
+                    <h3><?php echo htmlspecialchars($realisation['titre'] ?? "Titre inconnu"); ?></h3>
+                    <p><?php echo htmlspecialchars($realisation['description'] ?? "Description indisponible"); ?></p>
+                </div>
+            <?php endforeach; ?>
+            <a href="./assets/pdf/Nolan CV.pdf" class="download-btn" target="_blank">Télécharger mon CV</a>
+        <?php else: ?>
+            <p>Aucune réalisation trouvée.</p>
+        <?php endif; ?>
     </div>
 </section>

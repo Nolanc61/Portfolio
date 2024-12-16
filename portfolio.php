@@ -8,18 +8,29 @@
 <body>
 
 <?php
-require_once("C:/xampp/htdocs/YAML/yaml/yaml.php");
-$data = yaml_parse_file('accueil.yaml');
+require_once("vendor/autoload.php");
+
+use Symfony\Component\Yaml\Yaml;
+
+try {
+    $accueilData = Yaml::parseFile('accueil.yaml');
+    $competencesData = Yaml::parseFile('competences.yaml');
+    $realisationsData = Yaml::parseFile('realisations.yaml');
+    $formationsData = Yaml::parseFile('formations.yaml');
+    $contactData = Yaml::parseFile('contact.yaml');
+} catch (Exception $e) {
+    die("Erreur : Impossible de lire un fichier YAML. " . $e->getMessage());
+}
 ?>
 
 <header>
     <nav class="navbar">
         <ol>
-            <li><a href="#accueil"><?php echo $data['menu']['accueil']?></a></li>
-            <li><a href="#competences"><?php echo $data['menu']['competences']?></a></li>
-            <li><a href="#realisations"><?php echo $data['menu']['realisations']?></a></li>
-            <li><a href="#formations"><?php echo $data['menu']['formations']?></a></li>
-            <li><a href="#contact"><?php echo $data['menu']['contact']?></a></li>
+            <li><a href="#accueil"><?php echo $accueilData['menu']['accueil'] ?? 'Accueil'; ?></a></li>
+            <li><a href="#competences"><?php echo $accueilData['menu']['competences'] ?? 'Compétences'; ?></a></li>
+            <li><a href="#realisations"><?php echo $accueilData['menu']['realisations'] ?? 'Réalisations'; ?></a></li>
+            <li><a href="#formations"><?php echo $accueilData['menu']['formations'] ?? 'Formations'; ?></a></li>
+            <li><a href="#contact"><?php echo $accueilData['menu']['contact'] ?? 'Contact'; ?></a></li>
         </ol>
     </nav>
 </header>
