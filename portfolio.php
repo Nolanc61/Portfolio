@@ -13,11 +13,11 @@ require_once("vendor/autoload.php");
 use Symfony\Component\Yaml\Yaml;
 
 try {
-    $accueilData = Yaml::parseFile('accueil.yaml');
-    $competencesData = Yaml::parseFile('competences.yaml');
-    $realisationsData = Yaml::parseFile('realisations.yaml');
-    $formationsData = Yaml::parseFile('formations.yaml');
-    $contactData = Yaml::parseFile('contact.yaml');
+    $accueilData = Yaml::parseFile('yaml/accueil.yaml');
+    $competencesData = Yaml::parseFile('yaml/competences.yaml');
+    $realisationsData = Yaml::parseFile('yaml/realisations.yaml');
+    $formationsData = Yaml::parseFile('yaml/formations.yaml');
+    $contactData = Yaml::parseFile('yaml/contact.yaml');
 } catch (Exception $e) {
     die("Erreur : Impossible de lire un fichier YAML. " . $e->getMessage());
 }
