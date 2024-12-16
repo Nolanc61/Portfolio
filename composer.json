@@ -1,5 +1,6 @@
 {
     "require": {
-        "symfony/yaml": "^7.2"
+        "symfony/yaml": "^7.2",
+        "google/cloud-recaptcha-enterprise": "^1.17"
     }
 }
