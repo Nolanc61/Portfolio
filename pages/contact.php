@@ -1,7 +1,78 @@
 <?php
-require 'vendor/autoload.php';
+// Inclure les fichiers nécessaires de PHPMailer
+require 'vendor\phpmailer\phpmailer\src\PHPMailer.php';
+require 'vendor\phpmailer\phpmailer\src\SMTP.php';
+require 'vendor\phpmailer\phpmailer\src\Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use Symfony\Component\Yaml\Yaml;
+
+// Variable pour afficher le message de confirmation
+$confirmation = ''; 
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nom = $_POST['Nom'] ?? '';
+    $email = $_POST['Email'] ?? '';
+    $objet = $_POST['Objet'] ?? $sujet_defaut;
+    $message = $_POST['Message'] ?? '';
+    $captchaResponse = $_POST['g-recaptcha-response'] ?? '';
+
+    // Validation
+    if (empty($captchaResponse)) {
+        $confirmation = "<p class='error'>Veuillez vérifier que vous n'êtes pas un robot.</p>";
+    } else {
+        // Vérification reCAPTCHA
+        $secretKey = '6LeDcp8qAAAAAFwE7oAJ2oetUc4RPsi4lhpmUhiq';
+        $remoteIp = $_SERVER['REMOTE_ADDR'];
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = [
+            'secret' => $secretKey,
+            'response' => $captchaResponse,
+            'remoteip' => $remoteIp
+        ];
+
+        $options = [
+            'http' => [
+                'method'  => 'POST',
+                'content' => http_build_query($data),
+                'header'  => "Content-Type: application/x-www-form-urlencoded\r\n"
+            ]
+        ];
+        $context = stream_context_create($options);
+        $response = file_get_contents($url, false, $context);
+        $responseKeys = json_decode($response, true);
+
+        if (intval($responseKeys["success"]) !== 1) {
+            $confirmation = "<p class='error'>Vérification reCAPTCHA échouée. Veuillez réessayer.</p>";
+        } else {
+            // Envoi de l'email
+            $mail = new PHPMailer(true);
+            try {
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'ton mail';
+                $mail->Password = 'clé a entrer';
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port = 587;
+
+                $mail->setFrom($email, $nom);
+                $mail->addAddress($email_destinataire);
+                $mail->isHTML(true);
+                $mail->Subject = $objet;
+                $mail->Body = "";
+                $mail->send();
+                $confirmation = "<p class='confirmation'>$confirmation_message</p>";
+            } catch (Exception $e) {
+                $confirmation = "<p class='error'>Le message n'a pas pu être envoyé. Erreur : {$mail->ErrorInfo}</p>";
+            }
+        }
+    }
+}
 ?>
 
+<!-- Formulaire de contact -->
 
 <section id='contact'>
     <div class="container">
@@ -27,7 +98,9 @@ require 'vendor/autoload.php';
                 <textarea id="msg" name="message" placeholder="Entrez un commentaire" maxlength="500" required></textarea>
 
                 <!-- Champ caché pour le jeton ReCAPTCHA -->
-                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+            
+                <div class="g-recaptcha" data-sitekey="6LeDcp8qAAAAAPsdj3V-WXqVgB5F4wgbJQOQULNe"></div>
+               
 
                 <!-- Bouton de soumission -->
                 <input type="submit" value="Soumettre" />
@@ -36,4 +109,5 @@ require 'vendor/autoload.php';
     </div>
 </section>
 
-<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdvGp0qAAAAAILF-p-3vMrqCnmPigL7EPTNvqDd"></script> 
+<!-- Script reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

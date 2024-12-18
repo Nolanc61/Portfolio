@@ -349,29 +349,6 @@ label::after {
     color: red;
 }
 
-
-/* Media query pour la section compétences */
-@media (max-width: 768px) {
-    .competences {
-        flex-direction: column;
-        gap: 20px; /* Espacement vertical entre les blocs */
-    }
-
-    #competences_bloc {
-        width: 90%; /* Prend presque toute la largeur de l'écran */
-        max-width: none;
-        margin: 0 auto; /* Centrage horizontal */
-    }
-
-    #competences h3 {
-        font-size: 1.8rem;
-    }
-
-    #competences li {
-        font-size: 1.2rem;
-    }
-}
-
 /* Media query pour la section réalisations */
 @media (max-width: 1000px) {
     #realisations .content {
@@ -393,3 +370,26 @@ label::after {
         font-size: 1rem;
     }
 }
+
+/* Media query pour la section compétences */
+@media (max-width: 1000px) {
+    .competences {
+        flex-direction: column;
+        gap: 20px; /* Espacement vertical entre les blocs */
+    }
+
+    #competences_bloc {
+        width: 90%; /* Prend presque toute la largeur de l'écran */
+        max-width: none;
+        margin: 0 auto; /* Centrage horizontal */
+    }
+
+    #competences h3 {
+        font-size: 1.8rem;
+    }
+
+    #competences li {
+        font-size: 1.2rem;
+    }
+}
+
