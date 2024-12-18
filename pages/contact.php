@@ -7,9 +7,9 @@ require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 require 'vendor/phpmailer/phpmailer/src/Exception.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use Symfony\Component\Yaml\Yaml;
+use PHPMailer/PHPMailer/PHPMailer;
+use PHPMailer/PHPMailer/Exception;
+use Symfony/Component/Yaml/Yaml;
 
 // Variable pour afficher le message de confirmation
 $confirmation = ''; 
