@@ -1,4 +1,6 @@
 <?php
+$data = yaml_parse_file('yaml/contact.yaml');
+
 // Inclure les fichiers nécessaires de PHPMailer
 require 'vendor\phpmailer\phpmailer\src\PHPMailer.php';
 require 'vendor\phpmailer\phpmailer\src\SMTP.php';
