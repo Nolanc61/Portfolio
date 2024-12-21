@@ -75,7 +75,7 @@ section {
     align-items: center;
     justify-content: center;
 }
-
+/* Accueil */
 #accueil {
     background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
     text-align: center;
@@ -201,7 +201,24 @@ section {
     border-radius: 20px;
     font-size: 16px;
     transition: background-color 0.3s;
+    animation: pulse 1.5s infinite;
 }
+
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
 .download-btn:hover {
     background-color: #0056b3;
 }
@@ -349,6 +366,61 @@ label::after {
     color: red;
 }
 
+/* Media query pour #intro */
+@media (max-width: 1000px) {
+    #intro {
+        flex-direction: column; /* Passe en colonne */
+        gap: 20px; /* Ajoute un espacement entre les éléments */
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+/* Media query pour #accueil */
+@media (max-width: 1000px) {
+    #accueil {
+        padding: 20px; /* Réduit l'espacement avec les bords */
+    }
+
+    #accueil h2 {
+        padding-top: 100px;
+        font-size: 2.4rem;
+    }
+
+    #accueil p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Media query pour le bouton download-btn */
+@media (max-width: 1000px) {
+    .download-btn {
+        padding: 6px 12px; /* Réduit les dimensions du bouton */
+        font-size: 14px;
+        margin: 10px; /* Réduit l'espacement */
+    }
+}
+
+/* Media query pour #contact */
+@media (max-width: 1000px) {
+    #contact {
+        flex-direction: column; /* Empile les éléments */
+        height: auto; /* Ajuste la hauteur automatiquement */
+    }
+
+    .container {
+        width: 80%; /* Utilise presque toute la largeur de l'écran */
+        height: auto; /* Ajuste la hauteur automatiquement */
+        margin: 0 auto; /* Centre le conteneur */
+        border-radius: 15px;
+    }
+
+    .contact-left, .contact-right {
+        width: 100%; /* Les colonnes prennent toute la largeur */
+        padding: 10px;
+    }
+}
+
 /* Media query pour la section réalisations */
 @media (max-width: 1000px) {
     #realisations .content {
@@ -357,7 +429,7 @@ label::after {
     }
 
     .realisation {
-        width: 90%; /* Prend presque toute la largeur de l'écran */
+        width: 90%;
         max-width: none;
         margin: 0 auto; /* Centrage horizontal */
     }
@@ -393,3 +465,41 @@ label::after {
     }
 }
 
+/* Media query pour la section formations */
+@media (max-width: 1000px) {
+    #formations .content {
+        flex-direction: column; /* Une seule colonne pour les petits écrans */
+        gap: 20px; /* Espacement vertical entre les blocs */
+    }
+
+    .formation {
+        width: 90%;
+        max-width: none; /* Supprime la limite de largeur */
+        margin: 0 auto; /* Centrage horizontal */
+    }
+
+    .formation .text h4 {
+        font-size: 1.8rem;
+    }
+
+    .formation .text p {
+        font-size: 1rem;
+    }
+
+    .formation .image img {
+        max-height: 10vh; /* Taille réduite de l'image */
+    }
+}
+
+/* Media query pour la navbar */
+@media (max-width: 1000px) {
+    .navbar {
+        flex-direction: column; /* Empile les liens */
+        padding: 10px;
+    }
+
+    .navbar a {
+        font-size: 1rem; /* Réduit la taille des liens */
+        padding: 10px 15px;
+    }
+}

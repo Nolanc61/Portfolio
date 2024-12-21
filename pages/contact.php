@@ -2,14 +2,12 @@
 $data = yaml_parse_file('yaml/contact.yaml');
 
 // Inclure les fichiers nécessaires de PHPMailer
-echo 'gdshds';
 require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 require 'vendor/phpmailer/phpmailer/src/Exception.php';
 
-use PHPMailer/PHPMailer/PHPMailer;
-use PHPMailer/PHPMailer/Exception;
-use Symfony/Component/Yaml/Yaml;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 // Variable pour afficher le message de confirmation
 $confirmation = ''; 
@@ -104,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
                 <div class="g-recaptcha" data-sitekey="6LeDcp8qAAAAAPsdj3V-WXqVgB5F4wgbJQOQULNe"></div>
                
-
+                <br>
                 <!-- Bouton de soumission -->
                 <input type="submit" value="Soumettre" />
             </form>
