@@ -10,13 +10,15 @@ require 'vendor/autoload.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
+$sujet_defaut = 'Sujet par défaut';
+
 // Variable pour afficher le message de confirmation
 $confirmation = ''; 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = $_POST['Nom'] ?? '';
     $email = $_POST['Email'] ?? '';
-    $sujet_defaut = 'Sujet par défaut';
     $objet = $_POST['Objet'] ?? $sujet_defaut;
     $message = $_POST['Message'] ?? '';
     $captchaResponse = $_POST['g-recaptcha-response'] ?? '';
@@ -55,8 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'ton mail';
-                $mail->Password = 'clé a entrer';
+                $mail->Username = 'nolan.charpentier@sts-sio-caen.info';
+                $mail->Password = 'clé a entrer'; ##################################################
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
 
@@ -64,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $mail->addAddress($email_destinataire);
                 $mail->isHTML(true);
                 $mail->Subject = $objet;
-                $mail->Body = "";
+                $mail->Body = $message;
                 $mail->send();
                 $confirmation = "<p class='confirmation'>$confirmation_message</p>";
             } catch (Exception $e) {
