@@ -395,9 +395,13 @@ label::after {
 /* Media query pour le bouton download-btn */
 @media (max-width: 1000px) {
     .download-btn {
-        padding: 6px 12px; /* Réduit les dimensions du bouton */
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 30vw;
+        padding: auto; /* Réduit les dimensions du bouton */
         font-size: 14px;
-        margin: 10px; /* Réduit l'espacement */
+        margin: auto; /* Réduit l'espacement */
     }
 }
 
