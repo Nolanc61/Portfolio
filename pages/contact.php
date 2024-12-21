@@ -5,6 +5,7 @@ $data = yaml_parse_file('yaml/contact.yaml');
 require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 require 'vendor/phpmailer/phpmailer/src/Exception.php';
+require 'vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -15,6 +16,7 @@ $confirmation = '';
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = $_POST['Nom'] ?? '';
     $email = $_POST['Email'] ?? '';
+    $sujet_defaut = 'Sujet par défaut';
     $objet = $_POST['Objet'] ?? $sujet_defaut;
     $message = $_POST['Message'] ?? '';
     $captchaResponse = $_POST['g-recaptcha-response'] ?? '';
