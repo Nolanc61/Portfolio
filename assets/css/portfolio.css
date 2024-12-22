@@ -375,7 +375,7 @@ label::after {
         flex-direction: column; /* Passe en colonne */
         gap: 20px; /* Ajoute un espacement entre les éléments */
         padding: 20px;
-        text-align: center;
+        justify-content: center;
     }
 }
 
@@ -387,11 +387,21 @@ label::after {
 
     #accueil h2 {
         padding-top: 100px;
-        font-size: 2.4rem;
+        font-size: 5rem;
     }
 
     #accueil p {
-        font-size: 1.2rem;
+        font-size: 2.5rem;
+        padding-right: -50px;
+    }
+
+    #gauche {
+        width: 70vw;
+        padding-right: 0;
+    }
+
+    #droite {
+        width: 55vw;
     }
 }
 
@@ -426,6 +436,21 @@ label::after {
         width: 100%; /* Les colonnes prennent toute la largeur */
         padding: 10px;
     }
+    
+    label {
+        font-size: 1.2rem;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        font-size: 1.2rem;
+    }
+    
+    input[type="submit"] {
+        font-size: 1.2rem;
+    }
 }
 
 /* Media query pour la section réalisations */
@@ -442,11 +467,15 @@ label::after {
     }
 
     #realisations h3 {
-        font-size: 1.8rem;
+        font-size: 4rem;
+    }
+
+    #realisations p {
+        font-size: 2rem;
     }
 
     .realisation .description {
-        font-size: 1rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -454,7 +483,10 @@ label::after {
 @media (max-width: 1000px) {
     .competences {
         flex-direction: column;
-        gap: 20px; /* Espacement vertical entre les blocs */
+        gap: 30px; /* Espacement vertical entre les blocs */
+    }
+    #competences h2 {
+        font-size: 6rem;
     }
 
     #competences_bloc {
@@ -464,11 +496,11 @@ label::after {
     }
 
     #competences h3 {
-        font-size: 1.8rem;
+        font-size: 4rem;
     }
 
     #competences li {
-        font-size: 1.2rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -486,11 +518,11 @@ label::after {
     }
 
     .formation .text h4 {
-        font-size: 1.8rem;
+        font-size: 4rem;
     }
 
     .formation .text p {
-        font-size: 1rem;
+        font-size: 3rem;
     }
 
     .formation .image img {
@@ -501,16 +533,28 @@ label::after {
 /* Media query pour la navbar */
 @media (max-width: 1000px) {
     .navbar {
-        flex-direction: column; /* Empile les liens */
         padding: 10px;
     }
 
     .navbar a {
-        font-size: 1rem; /* Réduit la taille des liens */
+        font-size: 1.5rem; /* Réduit la taille des liens */
         padding: 10px 15px;
+        margin: 10px;
+        padding: 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 20px;
+        background-color: transparent;
+        transition: background-color 0.6s ease-in-out;
+    }
+
+    .navbar ol li a:hover{
+        color: #333;
+        background-color: lightgrey;
+        border-radius: 20px;
+        transition: background-color 0.6s ease-in-out;
     }
 }
-
 
 .notification {
     position: fixed;
@@ -527,3 +571,4 @@ label::after {
 .notification.error {
     background-color: #f44336;
 }
+

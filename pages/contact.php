@@ -98,21 +98,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <p><strong>Je serai ravi de vous lire...</strong></p>
         </div>
         <div class="contact-right">
-            <form id="contactForm" action="" method="POST">
+            <form id="contactForm" action="" method="POST" autocomplete="on">
                 <label for="Nom">Prénom&nbsp;:</label>
-                <input type="text" id="Nom" name="Nom" placeholder="Entrez votre prénom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" title="Le prénom ne doit contenir que des lettres, espaces, apostrophes ou tirets." />
+                <input type="text" id="Nom" name="Nom" placeholder="Entrez votre prénom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" title="Le prénom ne doit contenir que des lettres, espaces, apostrophes ou tirets." autocomplete="given-name"/>
                 
                 <label for="Lastname">Nom&nbsp;:</label>
-                <input type="text" id="Lastname" name="Lastname" placeholder="Entrez votre nom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" title="Le nom ne doit contenir que des lettres, espaces, apostrophes ou tirets." />
+                <input type="text" id="Lastname" name="Lastname" placeholder="Entrez votre nom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" title="Le nom ne doit contenir que des lettres, espaces, apostrophes ou tirets." autocomplete="family-name"/>
                 
                 <label for="Email">Mail&nbsp;:</label>
-                <input type="email" id="Email" name="Email" placeholder="Entrez votre e-mail" required />
+                <input type="email" id="Email" name="Email" placeholder="Entrez votre e-mail" required autocomplete="email"/>
                 
                 <label for="Objet">Quel est l'objet de votre message&nbsp;?</label>
-                <input type="text" id="Objet" name="Objet" placeholder="Entrez l'objet de votre message" />
+                <input type="text" id="Objet" name="Objet" placeholder="Entrez l'objet de votre message" autocomplete="off"/>
                 
-                <label for="Messafge">Message&nbsp;:</label>
-                <textarea id="Message" name="Message" placeholder="Entrez un commentaire" maxlength="500" required></textarea>
+                <label for="Message">Message&nbsp;:</label>
+                <textarea id="Message" name="Message" placeholder="Entrez un commentaire" maxlength="500" required autocomplete="off"></textarea>
 
                 <!-- Champ caché pour le jeton ReCAPTCHA -->
             
