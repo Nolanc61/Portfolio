@@ -172,11 +172,14 @@ section {
     margin-bottom: 1.5vh;
 }
 
+.realisation .illustration:hover {
+    transform: scale(1.1); /* Zoom de 10% */
+}
+
 .realisation .description {
     font-size: 1.6vw;
     text-align: justify;
 }
-
 
 #realisations h2, #formations h2, #competences h2 {
     font-size: 3vw;
@@ -210,11 +213,11 @@ section {
     }
 
     50% {
-        opacity: 0.5;
+        opacity: 0.6;
     }
 
     100% {
-        transform: scale(1.5);
+        transform: scale(1.3);
         opacity: 0;
     }
 }
@@ -506,4 +509,21 @@ label::after {
         font-size: 1rem; /* Réduit la taille des liens */
         padding: 10px 15px;
     }
+}
+
+
+.notification {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+.notification.error {
+    background-color: #f44336;
 }

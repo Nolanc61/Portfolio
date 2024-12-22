@@ -18,6 +18,7 @@ $confirmation = '';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = $_POST['Nom'] ?? '';
+    $Lastname = $_POST['Lastname'] ?? '';
     $email = $_POST['Email'] ?? '';
     $objet = $_POST['Objet'] ?? $sujet_defaut;
     $message = $_POST['Message'] ?? '';
@@ -58,17 +59,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'nolan.charpentier@sts-sio-caen.info';
-                $mail->Password = 'clé a entrer'; ##################################################
+                $mail->Password = 'hxgfrgtumowklhuu';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port = 587;
 
-                $mail->setFrom($email, $nom);
-                $mail->addAddress($email_destinataire);
+                $mail->setFrom($email, "$nom $Lastname");
+                $mail->addAddress('nolan.charpentier@sts-sio-caen.info');
+                $mail->addReplyTo($email, "$nom $Lastname");
                 $mail->isHTML(true);
                 $mail->Subject = $objet;
-                $mail->Body = $message;
+                $mail->Body = "<p><strong>From:</strong> $nom $Lastname</p>
+                                <p><strong>Email:</strong> $email</p>
+                                <p><strong>Objet:</strong> $objet</p>
+                                <p><strong>Message:</strong></p>
+                                <p>$message</p>";
                 $mail->send();
+                $confirmation_message = "Votre message a été envoyé avec succès !";
                 $confirmation = "<p class='confirmation'>$confirmation_message</p>";
+
             } catch (Exception $e) {
                 $confirmation = "<p class='error'>Le message n'a pas pu être envoyé. Erreur : {$mail->ErrorInfo}</p>";
             }
@@ -76,6 +84,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
+
+<div id="notification" class="notification <?php echo (!empty($confirmation) && strpos($confirmation, 'error') !== false) ? 'error' : ''; ?>">
+    <?php echo $confirmation; ?>
+</div>
 
 <!-- Formulaire de contact -->
 
@@ -86,21 +98,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <p><strong>Je serai ravi de vous lire...</strong></p>
         </div>
         <div class="contact-right">
-            <form id="contactForm" action="contact.php" method="POST">
-                <label for="name">Prénom&nbsp;:</label>
-                <input type="text" id="name" name="name" placeholder="Entrez votre prénom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" title="Le prénom ne doit contenir que des lettres, espaces, apostrophes ou tirets." />
+            <form id="contactForm" action="" method="POST">
+                <label for="Nom">Prénom&nbsp;:</label>
+                <input type="text" id="Nom" name="Nom" placeholder="Entrez votre prénom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" title="Le prénom ne doit contenir que des lettres, espaces, apostrophes ou tirets." />
                 
-                <label for="lastname">Nom&nbsp;:</label>
-                <input type="text" id="lastname" name="lastname" placeholder="Entrez votre nom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" title="Le nom ne doit contenir que des lettres, espaces, apostrophes ou tirets." />
+                <label for="Lastname">Nom&nbsp;:</label>
+                <input type="text" id="Lastname" name="Lastname" placeholder="Entrez votre nom" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+" title="Le nom ne doit contenir que des lettres, espaces, apostrophes ou tirets." />
                 
-                <label for="mail">Mail&nbsp;:</label>
-                <input type="email" id="mail" name="mail" placeholder="Entrez votre e-mail" required />
+                <label for="Email">Mail&nbsp;:</label>
+                <input type="email" id="Email" name="Email" placeholder="Entrez votre e-mail" required />
                 
-                <label for="objet">Quel est l'objet de votre message&nbsp;?</label>
-                <input type="text" id="objet" name="objet" placeholder="Entrez l'objet de votre message" />
+                <label for="Objet">Quel est l'objet de votre message&nbsp;?</label>
+                <input type="text" id="Objet" name="Objet" placeholder="Entrez l'objet de votre message" />
                 
-                <label for="msg">Message&nbsp;:</label>
-                <textarea id="msg" name="message" placeholder="Entrez un commentaire" maxlength="500" required></textarea>
+                <label for="Messafge">Message&nbsp;:</label>
+                <textarea id="Message" name="Message" placeholder="Entrez un commentaire" maxlength="500" required></textarea>
 
                 <!-- Champ caché pour le jeton ReCAPTCHA -->
             
@@ -116,3 +128,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <!-- Script reCAPTCHA -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    // Afficher la notification si un message est présent
+    const notification = document.getElementById('notification');
+    if (notification.innerHTML.trim() !== '') {
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 5000); // Cache la notification après 5 secondes
+    }
+</script>

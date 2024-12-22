@@ -41,6 +41,8 @@ if (!function_exists('yaml_parse_file')) {
 <?php include("./pages/realisations.php"); ?>
 <?php include("./pages/formations.php"); ?>
 <?php include("./pages/contact.php"); ?>
+<?php if (isset($confirmation)) echo $confirmation; ?>
+
 
 </body>
 </html>
