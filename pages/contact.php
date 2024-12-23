@@ -27,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validation
     if (empty($captchaResponse)) {
         $confirmation = "<p class='error'>Veuillez vérifier que vous n'êtes pas un robot.</p>";
+    } if (empty($_POST['rgpd'])) {
+        $confirmation = "<p class='error'>Veuillez accepter les conditions relatives à la confidentialité des données.</p>";
     } else {
         // Vérification reCAPTCHA
         $secretKey = '6LeDcp8qAAAAAFwE7oAJ2oetUc4RPsi4lhpmUhiq';
@@ -114,6 +116,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <label for="Message">Message&nbsp;:</label>
                 <textarea id="Message" name="Message" placeholder="Entrez un commentaire" maxlength="500" required autocomplete="off"></textarea>
 
+                <label>
+                    <input type="checkbox" id="rgpd" name="rgpd" required>
+                    J'accepte que mes données soient utilisées uniquement pour ce contact et ne seront pas conservées. (<a href="https://www.cnil.fr/fr/passer-laction/les-durees-de-conservation-des-donnees" target="_blank">En savoir plus sur le RGPD</a>)
+                </label>
+
                 <!-- Champ caché pour le jeton ReCAPTCHA -->
             
                 <div class="g-recaptcha" data-sitekey="6LeDcp8qAAAAAPsdj3V-WXqVgB5F4wgbJQOQULNe"></div>
@@ -126,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 </section>
 
-<!-- Script reCAPTCHA -->
+<!-- Script reCAPTCHA et RGPD -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
     // Afficher la notification si un message est présent
@@ -137,4 +144,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             notification.style.display = 'none';
         }, 5000); // Cache la notification après 5 secondes
     }
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        const rgpdCheckbox = document.getElementById('rgpd');
+        if (!rgpdCheckbox.checked) {
+            e.preventDefault();
+            alert("Veuillez accepter les conditions relatives à la confidentialité des données avant d'envoyer le message.");
+        }
+    });
 </script>

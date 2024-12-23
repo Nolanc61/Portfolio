@@ -2,12 +2,20 @@ realisations:
     - titre: Calculatrice JavaScript
       description: Une calculatrice codée en JavaScript et HTML
       illustration: assets/images/calculatrice.png
+      pdf: assets/pdf/Calculatrice JavaScript.pdf
+
     - titre: Blog Web Arena
       description: Une page web d'un blog codé en HTML
-      illustration: assets/images/blog.png    
+      illustration: assets/images/blog.png
+      pdf: assets/pdf/Blog Web Arena.pdf
+
     - titre: Formulaire de contact
       description: Une formulaire de contact codé en HTML et PHP
       illustration: assets/images/contact.png
+      pdf: assets/pdf/Formulaire de contact.pdf
+
     - titre: Création de compte
       description: Une page de création de compte codé en HTML et JS
       illustration: assets/images/signin.png
+      pdf: assets/pdf/Création de compte.pdf
+

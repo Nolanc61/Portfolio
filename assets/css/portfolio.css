@@ -77,7 +77,7 @@ section {
 }
 /* Accueil */
 #accueil {
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
+    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(170, 109, 201) 87%);
     text-align: center;
 }
 
@@ -154,7 +154,7 @@ section {
 
 #realisations, #formations, #competences {
     color: #D4D3DC;
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
+    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(170, 109, 201) 87%);
 }
 
 #realisations .content {
@@ -286,7 +286,7 @@ section {
 
 /* Contact */
 #contact {
-    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(94, 0, 141) 87%);
+    background: radial-gradient(circle, rgba(212,211,220,1) 0%, rgb(170, 109, 201) 87%);
     display: flex;
     justify-content: center;
     height: 20vh;
