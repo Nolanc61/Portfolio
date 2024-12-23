@@ -466,16 +466,16 @@ label::after {
         margin: 0 auto; /* Centrage horizontal */
     }
 
-    #realisations h3 {
+    #realisations h2 {
         font-size: 4rem;
+    }
+
+    #realisations h3 {
+        font-size: 3.5rem;
     }
 
     #realisations p {
         font-size: 2rem;
-    }
-
-    .realisation .description {
-        font-size: 2.5rem;
     }
 }
 
@@ -515,6 +515,10 @@ label::after {
         width: 90%;
         max-width: none; /* Supprime la limite de largeur */
         margin: 0 auto; /* Centrage horizontal */
+    }
+
+    #formations h2 {
+        font-size: 4rem;
     }
 
     .formation .text h4 {
