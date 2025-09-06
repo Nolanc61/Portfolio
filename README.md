@@ -4,6 +4,8 @@
 
 Ce projet est un **portfolio personnel** permettant de présenter mes compétences, domaines, projets et niveaux de manière claire et structurée. Il utilise un fichier YAML pour centraliser les informations et génère dynamiquement le contenu du site.  
 
+[Accéder au portfolio en ligne](http://srv1-vm-1153.sts-sio-caen.info)
+
 ---
 
 ## Fonctionnalités principales
